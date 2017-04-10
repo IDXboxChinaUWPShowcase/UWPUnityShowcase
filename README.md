@@ -13,6 +13,14 @@
 
 Shows how to use XboxLiveIntegration lib to intergrate Xbox Live service with the UWP app
 
+### Pre-coding Preparation
+
+1. Apply ID@Xbox / Register UDC
+2. Preparation on UDC
+3. Preparation on XDP
+4. Associate UDC product with the XDP title
+5. Configuring your development PC (Sandbox Setup)
+
 ### Build the sample
 
 1. If you download the samples ZIP, be sure to unzip the entire archive, not just the folder with the sample you want to build. 
@@ -29,8 +37,10 @@ Shows how to use XboxLiveIntegration lib to intergrate Xbox Live service with th
 
     See [Microsoft Doc](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store#associate_app_with_the_store)
 8. Edit the **xboxservices.config** JSON file, replace the `TitleId`, `PrimaryServiceConfigId` with the values you get from Windows Dev Center(UDC)
-9. Build the XboxLiveIntegration project to generate the `Microsoft.Xbox.Services.winmd` file. Right-click XboxUWPApp1 project > Add > Reference... > Browse > nagivate to the `Microsoft.Xbox.Services.winmd` file > click Add button > OK
-10. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
+9. Rebuild the sample project and **ensure the `Microsoft.Xbox.Live.SDK.WinRT.UWP` nuget package is installed**. Right-click XboxUWPApp1 project > Manage NuGet Packages... > Installed
+![](Images/buildstep3.jpg)
+10. **Select "x64" from the configuration dropdown in the toolbar in Visual Studio**.
+11. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
 
 ### Run the sample
 
