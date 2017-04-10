@@ -1,6 +1,6 @@
 # UWPUnityShowcase
 - Xbox-Live-Integration Class Library
-- XBL Programming Guide
+- UWP - Xbox Live Programming Guide
 
 # Xbox-Live-Integration
 
