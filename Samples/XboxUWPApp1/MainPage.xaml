@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="XboxUWPApp1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XboxUWPApp1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="CustomItemTemplate">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="Auto">
+                    <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" Text="Id: " />
+                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding Id}" />
+                    <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" Text=" - Name: " />
+                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding Name}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="Auto">
+                    <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" Text="AchievementType: " />
+                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding AchievementType}" />
+                    <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" Text=" | ProgressState: " />
+                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding ProgressState}" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70" />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Image Source="Assets\GamerPic.png" VerticalAlignment="Top" />
+        <StackPanel Grid.Column="1">
+            <TextBlock FontWeight="Black" Text="Press [A] to sign in" Margin="5,10,0,0" />
+            <TextBlock FontWeight="Black" Text="Press [Y] to switch users" Margin="5,10,0,0"/>
+        </StackPanel>
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" FontWeight="Black" FontSize="30" Text="Achievement Sample" Margin="0,10,10,0" />
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="5, 10, 5, 0">
+            <Button x:Name="btnSignIn" Style="{StaticResource buttonStyle1}"  Content="Sign in" Click="btnSignIn_Click" />
+            <Button x:Name="btnSwitchUser" Style="{StaticResource buttonStyle1}"  Content="Switch User" Click="btnSwitchUser_Click" />
+            <Button x:Name="btnGetAchievements" Style="{StaticResource buttonStyle1}"  Content="Get Achievements" Click="btnGetAchievements_Click" />
+            <Button x:Name="btnGetAchievement"  Style="{StaticResource buttonStyle1}" Content="Get Achievement" Click="btnGetAchievement_Click" />
+            <Button x:Name="btnWriteEvent"  Style="{StaticResource buttonStyle1}" Content="Write Event" Click="btnWriteEvent_Click" />
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+            <ListView ItemsSource="{Binding AllAchievements}" ItemTemplate="{StaticResource CustomItemTemplate}">
+                
+            </ListView>
+        </Grid>
+        <Grid Grid.Row="2" Grid.ColumnSpan="4">
+            <Button x:Name="btnToLeaderboardPage"  Style="{StaticResource buttonStyle1}" Content="ToLeaderboardPage" Click="btnToLeaderboardPage_Click" />
+        </Grid>
+        <Grid Grid.Row="3" Grid.ColumnSpan="4">
+            <TextBlock x:Name="tbMessage" />
+        </Grid>
+    </Grid>
+</Page>

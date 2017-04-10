@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="XboxUWPApp1.LeaderboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XboxUWPApp1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="5, 10, 5, 0">
+            <Button x:Name="btnGetLeaderboard" Style="{StaticResource buttonStyle1}"  Content="Get Leaderboard" Click="btnGetLeaderboard_Click" />
+            <Button x:Name="btnGetLeaderboardSkipToUser" Style="{StaticResource buttonStyle1}"  Content="Get Leaderboard SkipTo User" Click="btnGetLeaderboardSkipToUser_Click" />
+            <Button x:Name="btnGetSocialLeaderboard" Style="{StaticResource buttonStyle1}"  Content="Get Social Leaderboard" Click="btnGetSocialLeaderboard_Click" />
+        </StackPanel>
+    </Grid>
+</Page>
