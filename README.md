@@ -1,3 +1,7 @@
+# UWPUnityShowcase
+- Xbox-Live-Integration Class Library
+- XBL Programming Guide
+
 # Xbox-Live-Integration
 
 .Net wrapper for Xbox Live SDK for UWP
@@ -27,10 +31,11 @@ Shows how to use XboxLiveIntegration lib to intergrate Xbox Live service with th
 2. Start Microsoft Visual Studio 2015 and select **File** \> **Open** \> **Project/Solution**.
 3. Starting in the folder where you unzipped the samples, go to the Samples subfolder. Double-click the Visual Studio Solution (.sln) file.
 4. There are three missing files
-![](Images/buildstep1.jpg)
+
+    ![](Images/buildstep1.jpg)
 5. Double-click **Package.appxmanifest** file and navigate to **Packaging** page, click **Choose Certificate...** button
 6. Click **Configure Certifacte...** -> **Create test Certificate** -> Fill password for test certificate -> Click OK button
-![](Images/buildstep2.jpg)
+    ![](Images/buildstep2.jpg)
 7. Associate app with the Store
 
     From the Project menu in your Visual Studio solution, choose "Store > Associate App with the Store"
@@ -38,7 +43,7 @@ Shows how to use XboxLiveIntegration lib to intergrate Xbox Live service with th
     See [Microsoft Doc](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store#associate_app_with_the_store)
 8. Edit the **xboxservices.config** JSON file, replace the `TitleId`, `PrimaryServiceConfigId` with the values you get from Windows Dev Center(UDC)
 9. Rebuild the sample project and **ensure the `Microsoft.Xbox.Live.SDK.WinRT.UWP` nuget package is installed**. Right-click XboxUWPApp1 project > Manage NuGet Packages... > Installed
-![](Images/buildstep3.jpg)
+    ![](Images/buildstep3.jpg)
 10. **Select "x64" from the configuration dropdown in the toolbar in Visual Studio**.
 11. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
 
