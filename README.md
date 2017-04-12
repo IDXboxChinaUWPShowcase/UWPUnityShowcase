@@ -42,7 +42,7 @@ Shows how to use XboxLiveIntegration lib to intergrate Xbox Live service with th
 
     See [Microsoft Doc](https://developer.microsoft.com/en-us/windows/holographic/submitting_an_app_to_the_windows_store#associate_app_with_the_store)
 8. Edit the **xboxservices.config** JSON file, replace the `TitleId`, `PrimaryServiceConfigId` with the values you get from Windows Dev Center(UDC)
-9. Rebuild the sample project and **ensure the `Microsoft.Xbox.Live.SDK.WinRT.UWP` nuget package is installed**. Right-click XboxUWPApp1 project > Manage NuGet Packages... > Installed
+9. Rebuild the sample project and **ensure the `Microsoft.Xbox.Live.SDK.WinRT.UWP` (version 2016.11.161031.1) nuget package is installed**. Right-click XboxUWPApp1 project > Manage NuGet Packages... > Installed
     ![](Images/buildstep3.jpg)
 10. **Select "x64" from the configuration dropdown in the toolbar in Visual Studio**.
 11. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
