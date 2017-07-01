@@ -92,9 +92,11 @@ Most of code changes are in the GameManager.cs file, Path: *Assets\_Completed-As
 
 ### Build the sample
 
-1. Start Unity 5.6.0f3 (64-bit)
-2. Download the Tanks project: https://www.assetstore.unity3d.com/en/#!/content/46209/
-3. Open the **_Complete-Game** scene, replace the *Assets\_Completed-Assets\Scripts\Managers\GameManager.cs* file with *Samples\Tanks\GameManager.cs* file
+1. Download the Tanks project: https://www.assetstore.unity3d.com/en/#!/content/46209/
+2. Open the **_Complete-Game** scene in Unity Editor, replace the *Assets\_Completed-Assets\Scripts\Managers\GameManager.cs* file with *Samples\Tanks\GameManager.cs* file
+3. In the Unity Editor, Open Assets/Plugins, drag Microsoft.Xbox.Services.winmd and **XboxLiveIntegration.dll** into to Assets hierarchy. Change Importing settings for **XboxLiveIntegration.dll**. Select this item and change setting as follows
+
+    ![](Images/tankdemo-0.jpg)
 4. File -> Build Settings -> change settings as below
 
     ![](Images/tankdemo-1.jpg)
