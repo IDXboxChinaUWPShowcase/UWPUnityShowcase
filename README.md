@@ -70,7 +70,7 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ---
 
-## [About the Unity based UWP sample project](Samples\Tanks)
+## About the Unity based UWP sample project
 
 Shows how to use XboxLiveIntegration lib to intergrate Xbox Live service with the **Unity based UWP app**. This sample is based on the official Unity demo: [Tanks](https://unity3d.com/learn/tutorials/projects/tanks-tutorial).
 
@@ -94,7 +94,7 @@ Most of code changes are in the GameManager.cs file, Path: *Assets\_Completed-As
 
 1. Start Unity 5.6.0f3 (64-bit)
 2. Download the Tanks project: https://www.assetstore.unity3d.com/en/#!/content/46209/
-3. Open the _Complete-Game scene, replace the *Assets\_Completed-Assets\Scripts\Managers\GameManager.cs* file with Samples\Tanks\GameManager.cs file
+3. Open the **_Complete-Game** scene, replace the *Assets\_Completed-Assets\Scripts\Managers\GameManager.cs* file with *Samples\Tanks\GameManager.cs* file
 4. File -> Build Settings -> change settings as below
 
     ![](Images/tankdemo-1.jpg)
