@@ -104,7 +104,7 @@ namespace XboxLiveIntegration
 
         private void UpdateCurrentUser()
         {
-            if (xboxLiveUser.IsSignedIn)
+            if (xboxLiveUser != null && xboxLiveUser.IsSignedIn)
             {
                 XboxLiveUser.SignOutCompleted += XboxLiveUser_SignOutCompleted;
                 xboxLiveContext = new XboxLiveContext(xboxLiveUser);
@@ -173,20 +173,9 @@ namespace XboxLiveIntegration
                 //throw; //Comment to avoid crashing
             }
         }
-
-        public async void SwitchAccount()
+        [Obsolete]
+        public void SwitchAccount()
         {
-            try
-            {
-                var signInResult = await xboxLiveUser.SwitchAccountAsync(UIDispatcher);
-                HandleSignInResult(signInResult);
-            }
-            catch (Exception ex)
-            {
-                string errorStr = "Switch account failed: " + ex.Message;
-                Debug.WriteLine(errorStr);
-                //throw; //Comment to avoid crashing
-            }
         }
     }
 }

@@ -84,15 +84,7 @@ namespace XboxUWPApp1
 
         private void btnSwitchUser_Click(object sender, RoutedEventArgs e)
         {
-            LiveResources.GetInstance().SwitchAccount();
-            if (LiveResources.GetInstance().IsSignedIn)
-            {
-                WriteOutputMessage(outputMessage, $"Switch account and sign in successfully - {DateTime.Now}");
-            }
-            else
-            {
-                WriteOutputMessage(outputMessage, $"Switch account and sign in failed - {DateTime.Now}");
-            }
+            WriteOutputMessage(outputMessage, $"This function has been obsoleted - {DateTime.Now}");
         }
 
         private void btnToLeaderboardPage_Click(object sender, RoutedEventArgs e)
