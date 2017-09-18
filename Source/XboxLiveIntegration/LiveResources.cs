@@ -149,9 +149,8 @@ namespace XboxLiveIntegration
                     string errorStr = "Silently sign in failed: " + ex.Message;
                     Debug.WriteLine(errorStr);
                     UpdateCurrentUser();
-                    throw;
+                    //throw; //Comment to avoid crashing
                 }
-
             }
             else
             {
@@ -171,14 +170,23 @@ namespace XboxLiveIntegration
                 string errorStr = "Sign in failed: " + ex.Message;
                 Debug.WriteLine(errorStr);
                 UpdateCurrentUser();
-                throw;
+                //throw; //Comment to avoid crashing
             }
         }
 
         public async void SwitchAccount()
         {
-            var signInResult = await xboxLiveUser.SwitchAccountAsync(UIDispatcher);
-            HandleSignInResult(signInResult);
+            try
+            {
+                var signInResult = await xboxLiveUser.SwitchAccountAsync(UIDispatcher);
+                HandleSignInResult(signInResult);
+            }
+            catch (Exception ex)
+            {
+                string errorStr = "Switch account failed: " + ex.Message;
+                Debug.WriteLine(errorStr);
+                //throw; //Comment to avoid crashing
+            }
         }
     }
 }
