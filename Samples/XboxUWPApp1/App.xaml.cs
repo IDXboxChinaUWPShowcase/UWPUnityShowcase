@@ -30,6 +30,12 @@ namespace XboxUWPApp1
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            this.UnhandledException += App_UnhandledException;
+        }
+
+        private void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            
         }
 
         /// <summary>

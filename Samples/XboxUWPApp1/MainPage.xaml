@@ -60,7 +60,12 @@
             <Button x:Name="btnToLeaderboardPage"  Style="{StaticResource buttonStyle1}" Content="ToLeaderboardPage" Click="btnToLeaderboardPage_Click" />
         </Grid>
         <Grid Grid.Row="3" Grid.ColumnSpan="4">
-            <TextBlock x:Name="tbMessage" />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Message:" FontWeight="Bold" />
+            <ListBox Grid.Row="1" x:Name="outputMessage" Foreground="Gray" ScrollViewer.VerticalScrollBarVisibility="Auto" />
         </Grid>
     </Grid>
 </Page>

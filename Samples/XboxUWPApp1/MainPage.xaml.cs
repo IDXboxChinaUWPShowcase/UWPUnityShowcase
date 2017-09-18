@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using XboxLiveIntegration;
 
@@ -71,16 +72,40 @@ namespace XboxUWPApp1
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
             LiveResources.GetInstance().SignIn();
+            if (LiveResources.GetInstance().IsSignedIn)
+            {
+                WriteOutputMessage(outputMessage, $"Sign in successfully - {DateTime.Now}");
+            }
+            else
+            {
+                WriteOutputMessage(outputMessage, $"Sign in failed - {DateTime.Now}");
+            }
         }
 
         private void btnSwitchUser_Click(object sender, RoutedEventArgs e)
         {
             LiveResources.GetInstance().SwitchAccount();
+            if (LiveResources.GetInstance().IsSignedIn)
+            {
+                WriteOutputMessage(outputMessage, $"Switch account and sign in successfully - {DateTime.Now}");
+            }
+            else
+            {
+                WriteOutputMessage(outputMessage, $"Switch account and sign in failed - {DateTime.Now}");
+            }
         }
 
         private void btnToLeaderboardPage_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(LeaderboardPage));
+        }
+
+        private void WriteOutputMessage(ListBox lb, string msg)
+        {
+            lb.Items.Add(msg);
+            lb.SelectedIndex = lb.Items.Count - 1;
+            lb.UpdateLayout();
+            lb.ScrollIntoView(lb.SelectedItem);
         }
     }
 }
