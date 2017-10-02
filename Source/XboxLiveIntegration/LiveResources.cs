@@ -2,6 +2,7 @@
 using Microsoft.Xbox.Services.System;
 using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace XboxLiveIntegration
 {
@@ -158,12 +159,13 @@ namespace XboxLiveIntegration
             }
         }
 
-        public async void SignIn()
+        public async Task<SignInResult> SignIn()
         {
             try
             {
                 var signInResult = await xboxLiveUser.SignInAsync(UIDispatcher);
                 HandleSignInResult(signInResult);
+                return signInResult;
             }
             catch (Exception ex)
             {
@@ -171,6 +173,7 @@ namespace XboxLiveIntegration
                 Debug.WriteLine(errorStr);
                 UpdateCurrentUser();
                 //throw; //Comment to avoid crashing
+                return null;
             }
         }
         [Obsolete]
