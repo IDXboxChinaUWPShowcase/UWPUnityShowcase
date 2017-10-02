@@ -38,10 +38,10 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Image Source="Assets\GamerPic.png" VerticalAlignment="Top" />
+        <Image Source="Assets\xbox_one_logo.png" VerticalAlignment="Top" />
         <StackPanel Grid.Column="1">
             <TextBlock FontWeight="Black" Text="Press [A] to sign in" Margin="5,10,0,0" />
-            <TextBlock FontWeight="Black" Text="Press [Y] to switch users" Margin="5,10,0,0"/>
+            <!--<TextBlock FontWeight="Black" Text="Press [Y] to switch users" Margin="5,10,0,0"/>-->
         </StackPanel>
         <TextBlock Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" FontWeight="Black" FontSize="30" Text="Achievement Sample" Margin="0,10,10,0" />
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="5, 10, 5, 0">
