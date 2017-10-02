@@ -159,6 +159,32 @@ namespace XboxLiveIntegration
             }
         }
 
+        /// <summary>
+        /// Sign In Silently
+        /// </summary>
+        /// <returns></returns>
+        public async Task<SignInResult> SignInSilently()
+        {
+            try
+            {
+                var signInResult = await xboxLiveUser.SignInSilentlyAsync(UIDispatcher);
+                HandleSignInResult(signInResult);
+                return signInResult;
+            }
+            catch (Exception ex)
+            {
+                string errorStr = "Sign in silently failed: " + ex.Message;
+                Debug.WriteLine(errorStr);
+                UpdateCurrentUser();
+                //throw; //Comment to avoid crashing
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Sign In
+        /// </summary>
+        /// <returns></returns>
         public async Task<SignInResult> SignIn()
         {
             try
@@ -176,6 +202,10 @@ namespace XboxLiveIntegration
                 return null;
             }
         }
+        
+        /// <summary>
+        /// Switch Account
+        /// </summary>
         [Obsolete]
         public void SwitchAccount()
         {
