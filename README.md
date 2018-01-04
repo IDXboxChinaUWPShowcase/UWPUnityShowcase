@@ -14,7 +14,7 @@ In this plugin, we used [xbox-live-api](https://github.com/Microsoft/xbox-live-a
 
 This plugin is still under developing. For now, it only demonstrates SignIn and Profile, Stats, Leaderboards and Achievements. Developers can refer to this plugin and develop your own implementation.
 
-Check out the [Wiki](wiki/) for details
+Check out the [Wiki](https://github.com/IDXboxChinaUWPShowcase/UWPUnityShowcase/wiki) for details
 
 # UWP - Xbox Live Programming Guide
 
