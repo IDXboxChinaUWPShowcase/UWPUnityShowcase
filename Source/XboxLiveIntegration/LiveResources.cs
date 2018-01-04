@@ -2,6 +2,7 @@
 using Microsoft.Xbox.Services.System;
 using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace XboxLiveIntegration
 {
@@ -104,7 +105,7 @@ namespace XboxLiveIntegration
 
         private void UpdateCurrentUser()
         {
-            if (xboxLiveUser.IsSignedIn)
+            if (xboxLiveUser != null && xboxLiveUser.IsSignedIn)
             {
                 XboxLiveUser.SignOutCompleted += XboxLiveUser_SignOutCompleted;
                 xboxLiveContext = new XboxLiveContext(xboxLiveUser);
@@ -158,12 +159,39 @@ namespace XboxLiveIntegration
             }
         }
 
-        public async void SignIn()
+        /// <summary>
+        /// Sign In Silently
+        /// </summary>
+        /// <returns></returns>
+        public async Task<SignInResult> SignInSilently()
+        {
+            try
+            {
+                var signInResult = await xboxLiveUser.SignInSilentlyAsync(UIDispatcher);
+                HandleSignInResult(signInResult);
+                return signInResult;
+            }
+            catch (Exception ex)
+            {
+                string errorStr = "Sign in silently failed: " + ex.Message;
+                Debug.WriteLine(errorStr);
+                UpdateCurrentUser();
+                //throw; //Comment to avoid crashing
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Sign In
+        /// </summary>
+        /// <returns></returns>
+        public async Task<SignInResult> SignIn()
         {
             try
             {
                 var signInResult = await xboxLiveUser.SignInAsync(UIDispatcher);
                 HandleSignInResult(signInResult);
+                return signInResult;
             }
             catch (Exception ex)
             {
@@ -171,22 +199,16 @@ namespace XboxLiveIntegration
                 Debug.WriteLine(errorStr);
                 UpdateCurrentUser();
                 //throw; //Comment to avoid crashing
+                return null;
             }
         }
-
-        public async void SwitchAccount()
+        
+        /// <summary>
+        /// Switch Account
+        /// </summary>
+        [Obsolete]
+        public void SwitchAccount()
         {
-            try
-            {
-                var signInResult = await xboxLiveUser.SwitchAccountAsync(UIDispatcher);
-                HandleSignInResult(signInResult);
-            }
-            catch (Exception ex)
-            {
-                string errorStr = "Switch account failed: " + ex.Message;
-                Debug.WriteLine(errorStr);
-                //throw; //Comment to avoid crashing
-            }
         }
     }
 }

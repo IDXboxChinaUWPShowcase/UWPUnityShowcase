@@ -69,9 +69,22 @@ namespace XboxUWPApp1
             
         }
 
-        private void btnSignIn_Click(object sender, RoutedEventArgs e)
+        private async void btnSignInSilently_Click(object sender, RoutedEventArgs e)
         {
-            LiveResources.GetInstance().SignIn();
+            await LiveResources.GetInstance().SignInSilently();
+            if (LiveResources.GetInstance().IsSignedIn)
+            {
+                WriteOutputMessage(outputMessage, $"Sign in silently successfully - {DateTime.Now}");
+            }
+            else
+            {
+                WriteOutputMessage(outputMessage, $"Sign in silently failed - {DateTime.Now}");
+            }
+        }
+
+        private async void btnSignIn_Click(object sender, RoutedEventArgs e)
+        {
+            await LiveResources.GetInstance().SignIn();
             if (LiveResources.GetInstance().IsSignedIn)
             {
                 WriteOutputMessage(outputMessage, $"Sign in successfully - {DateTime.Now}");
@@ -84,15 +97,7 @@ namespace XboxUWPApp1
 
         private void btnSwitchUser_Click(object sender, RoutedEventArgs e)
         {
-            LiveResources.GetInstance().SwitchAccount();
-            if (LiveResources.GetInstance().IsSignedIn)
-            {
-                WriteOutputMessage(outputMessage, $"Switch account and sign in successfully - {DateTime.Now}");
-            }
-            else
-            {
-                WriteOutputMessage(outputMessage, $"Switch account and sign in failed - {DateTime.Now}");
-            }
+            WriteOutputMessage(outputMessage, $"This function has been obsoleted - {DateTime.Now}");
         }
 
         private void btnToLeaderboardPage_Click(object sender, RoutedEventArgs e)

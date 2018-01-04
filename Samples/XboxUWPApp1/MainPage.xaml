@@ -30,7 +30,6 @@
             <RowDefinition Height="70" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="70" />
@@ -38,28 +37,30 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Image Source="Assets\GamerPic.png" VerticalAlignment="Top" />
+        <Image Source="Assets\xbox_one_logo.png" VerticalAlignment="Top" />
         <StackPanel Grid.Column="1">
             <TextBlock FontWeight="Black" Text="Press [A] to sign in" Margin="5,10,0,0" />
-            <TextBlock FontWeight="Black" Text="Press [Y] to switch users" Margin="5,10,0,0"/>
+            <!--<TextBlock FontWeight="Black" Text="Press [Y] to switch users" Margin="5,10,0,0"/>-->
         </StackPanel>
         <TextBlock Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" FontWeight="Black" FontSize="30" Text="Achievement Sample" Margin="0,10,10,0" />
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="5, 10, 5, 0">
-            <Button x:Name="btnSignIn" Style="{StaticResource buttonStyle1}"  Content="Sign in" Click="btnSignIn_Click" />
-            <Button x:Name="btnSwitchUser" Style="{StaticResource buttonStyle1}"  Content="Switch User" Click="btnSwitchUser_Click" />
-            <Button x:Name="btnGetAchievements" Style="{StaticResource buttonStyle1}"  Content="Get Achievements" Click="btnGetAchievements_Click" />
-            <Button x:Name="btnGetAchievement"  Style="{StaticResource buttonStyle1}" Content="Get Achievement" Click="btnGetAchievement_Click" />
-            <Button x:Name="btnWriteEvent"  Style="{StaticResource buttonStyle1}" Content="Write Event" Click="btnWriteEvent_Click" />
-        </StackPanel>
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="5, 10, 5, 0">
+                <Button x:Name="btnSignInSilently" Style="{StaticResource buttonStyle1}"  Content="Sign in Silently" Click="btnSignInSilently_Click" />
+                <Button x:Name="btnSignIn" Style="{StaticResource buttonStyle1}"  Content="Sign in" Click="btnSignIn_Click" />
+                <Button x:Name="btnSwitchUser" IsEnabled="False" Style="{StaticResource buttonStyle1}"  Content="Switch User" Click="btnSwitchUser_Click" />
+                <Button x:Name="btnGetAchievements" Style="{StaticResource buttonStyle1}"  Content="Get Achievements" Click="btnGetAchievements_Click" />
+                <Button x:Name="btnGetAchievement"  Style="{StaticResource buttonStyle1}" Content="Get Achievement" Click="btnGetAchievement_Click" />
+                <Button x:Name="btnWriteEvent"  Style="{StaticResource buttonStyle1}" Content="Write Event" Click="btnWriteEvent_Click" />
+            </StackPanel>
+        </ScrollViewer>
         <Grid Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
             <ListView ItemsSource="{Binding AllAchievements}" ItemTemplate="{StaticResource CustomItemTemplate}">
-                
             </ListView>
         </Grid>
-        <Grid Grid.Row="2" Grid.ColumnSpan="4">
+        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
             <Button x:Name="btnToLeaderboardPage"  Style="{StaticResource buttonStyle1}" Content="ToLeaderboardPage" Click="btnToLeaderboardPage_Click" />
         </Grid>
-        <Grid Grid.Row="3" Grid.ColumnSpan="4">
+        <Grid Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30" />
                 <RowDefinition />

@@ -17,7 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>XboxUWPApp1_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>47797F7E2A6595272309C46FD3CEDC87D479A78A</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>D6FEA6F0F9CA5C384DC816AC16C0CC412CB37E04</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -92,7 +92,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Content Include="Assets\GamerPic.png" />
+    <Content Include="Assets\xbox_one_logo.png" />
     <None Include="Package.StoreAssociation.xml" />
     <None Include="project.json" />
   </ItemGroup>
@@ -100,6 +100,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="LeaderboardPage.xaml.cs">
       <DependentUpon>LeaderboardPage.xaml</DependentUpon>
     </Compile>
@@ -144,9 +145,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="XboxLiveIntegration">
-      <HintPath>..\References\x64\Debug\XboxLiveIntegration.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\Source\XboxLiveIntegration\XboxLiveIntegration.csproj">
+      <Project>{fb0c9b65-d997-4168-bc62-506b265b1975}</Project>
+      <Name>XboxLiveIntegration</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
