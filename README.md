@@ -27,9 +27,9 @@ Check out the [Wiki](https://github.com/IDXboxChinaUWPShowcase/UWPUnityShowcase/
 ## Xbox Live API structure
 ![Xbox Live API structure](Images/XboxLive.jpg)
 
-## XboxLiveIntegration(Class Library) code map
-[Code Map LINK](Documents/XboxLiveIntegrationCodeMap.dgml)
-![XboxLiveIntegration Properties](Images/XboxLiveIntegration_properties.jpg)
+## XboxLiveIntegration(Class Library) [code map](Documents/XboxLiveIntegrationCodeMap.dgml)
+
+![XboxLiveIntegration Code Map](Images/XboxLiveIntegration_codemap.jpg)
 
 ---
 
