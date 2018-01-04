@@ -1,9 +1,20 @@
 # UWPUnityShowcase
 
+- **XSAPI Unity Plugin (2018 Jan Release)**
 - UWP - Xbox Live Programming Guide
-- Xbox-Live-Integration Class Library
+- Xbox-Live-Integration Class Library **(V1.0 01/04/2018)**
 - UWP Sample
 - Unity based UWP sample
+
+# [XSAPI Unity Plugin](Plugin/)
+
+This plugin is based on [xbox-live-unity-plugin](https://github.com/Microsoft/xbox-live-unity-plugin) to support [Creators Program](https://www.xbox.com/en-US/developers/creators-program/) and **[ID@Xbox](https://www.xbox.com/en-US/developers/id)** program. Most API surfaces are remained the same. 
+
+In this plugin, we used [xbox-live-api](https://github.com/Microsoft/xbox-live-api) instead of the original Xbox Live libraries (e.g. Microsoft.Xbox.Services.UWP.CSharp.dll), so that we can use achievements and some other features that is not supported in Xbox Live Creators Program. However, as we used WinRT APIs, there will be no placeholder data when playing in the editor.
+
+This plugin is still under developing. For now, it only demonstrates SignIn and Profile, Stats, Leaderboards and Achievements. Developers can refer to this plugin and develop your own implementation.
+
+Check out the [Wiki](wiki/) for details
 
 # UWP - Xbox Live Programming Guide
 
@@ -127,8 +138,8 @@ Most of code changes are in the GameManager.cs file, Path: *Assets\_Completed-As
     - Click on the **Capabilities** tab 
     - Click on **Internet (Client)**
     - Close the file and save the changes
-10. Add Xbox Extensions for the UWP
-    - Right-Click project, **Add** -> **Reference…**
-    - Universal Windows -> Extensions -> Select **Xbox Extensions for the UWP**
+10. <del>Add Xbox Extensions for the UWP</del>
+    - <del>Right-Click project, **Add** -> **Reference…**</del>
+    - <del>Universal Windows -> Extensions -> Select **Xbox Extensions for the UWP**</del>
         ![](Images/tankdemo-5.jpg)
 11. **Select "x64" from the configuration dropdown in the toolbar of Visual Studio**
