@@ -141,5 +141,4 @@ Most of code changes are in the GameManager.cs file, Path: *Assets\_Completed-As
 10. <del>Add Xbox Extensions for the UWP</del>
     - <del>Right-Click project, **Add** -> **Reference…**</del>
     - <del>Universal Windows -> Extensions -> Select **Xbox Extensions for the UWP**</del>
-        ![](Images/tankdemo-5.jpg)
 11. **Select "x64" from the configuration dropdown in the toolbar of Visual Studio**
