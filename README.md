@@ -1,18 +1,20 @@
 # UWPUnityShowcase
 
-- **XSAPI Unity Plugin (2018 Jan Release)**
 - UWP - Xbox Live Programming Guide
 - Xbox-Live-Integration Class Library **(V1.0 01/04/2018)**
 - UWP Sample
 - Unity based UWP sample
+- **Partner Unity UWP Sample Assets (2018 Jan Release)**
 
-# [XSAPI Unity Plugin](Plugin/)
+# [Partner Unity UWP Sample Assets](Assets/)
 
-This plugin is based on [xbox-live-unity-plugin](https://github.com/Microsoft/xbox-live-unity-plugin) to support [Creators Program](https://www.xbox.com/en-US/developers/creators-program/) and **[ID@Xbox](https://www.xbox.com/en-US/developers/id)** program. Most API surfaces are remained the same. 
+Firstly, please note that **the official Unity plugin for ID@Xbox developers** that linked to [here](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp) in **Step 6**. 
 
-In this plugin, we used [xbox-live-api](https://github.com/Microsoft/xbox-live-api) instead of the original Xbox Live libraries (e.g. Microsoft.Xbox.Services.UWP.CSharp.dll), so that we can use achievements and some other features that is not supported in Xbox Live Creators Program. However, as we used WinRT APIs, there will be no placeholder data when playing in the editor.
+The code logic of this sample assets is based on [xbox-live-unity-plugin](https://github.com/Microsoft/xbox-live-unity-plugin) to support [Creators Program](https://www.xbox.com/en-US/developers/creators-program/) and **[ID@XBOX Program Partner](https://www.xbox.com/en-US/developers/id)**. Most API surfaces are remained the same.
 
-This plugin is still under developing. For now, it only demonstrates SignIn and Profile, Stats, Leaderboards and Achievements. Developers can refer to this plugin and develop your own implementation.
+In this assets, we used [xbox-live-api](https://github.com/Microsoft/xbox-live-api) instead of the original Xbox Live libraries (e.g. Microsoft.Xbox.Services.UWP.CSharp.dll), so that we can use achievements and some other features that is not supported in Xbox Live Creators Program. However, as we used WinRT APIs, there will be no placeholder data when playing in the editor.
+
+This sample assets is still under developing. For now, it only demonstrates SignIn and Profile, Stats, Leaderboards and Achievements. Developers can refer to this sample assets and develop your own implementation.
 
 Check out the [Wiki](https://github.com/IDXboxChinaUWPShowcase/UWPUnityShowcase/wiki) for details
 
